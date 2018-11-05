@@ -10,4 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../Includes/libft.h"
+#include <stdlib.h>
 
+char *ft_strnew(size_t size)
+{
+	int		i;
+	char	*fresh;
+
+	fresh = (char*)malloc(size);
+	if (fresh == NULL)
+		return NULL;
+	i = -1;
+	while (++i < size)
+		fresh[i] = '0';
+	fresh[size] = '\0';
+	return (fresh);
+}
