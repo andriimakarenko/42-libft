@@ -10,16 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../Includes/libft.h"
+
 void	*ft_memalloc(size_t size)
 {
 	void	*result;
-	char	*nulls;
-	int		i;
 
 	result = malloc(size);
-	nulls = (char*)result;
-	i = -1;
-	while (++i < size)
-		nulls[i] = '0';
+	if (result == NULL)
+		return (NULL);
+	memset(result, 0, size);
 	return (result);
 }
