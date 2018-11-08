@@ -29,5 +29,6 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlen(const char *s);
 int		ft_count_end_ws(char *s);
+int		ft_count_start_ws(char *s);
 int		ft_iswhitespace(char c);
 #endif
