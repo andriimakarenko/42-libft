@@ -31,4 +31,6 @@ size_t	ft_strlen(const char *s);
 int		ft_count_end_ws(char *s);
 int		ft_count_start_ws(char *s);
 int		ft_iswhitespace(char c);
+char	*ft_strtrim(char const *s);
+char	**ft_strsplit(char const *s, char c);
 #endif
