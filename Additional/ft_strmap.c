@@ -14,5 +14,20 @@
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	
+	int		i;
+	int		len;
+	char	*result;
+
+	if (s == NULL || f == NULL)
+		return (NULL);
+	i = -1;
+	len = 0;
+	while (s[++i])
+		len++;
+	result = (char*)malloc(sizeof(char) * (len + 1));
+	result[len + 1] = '\n';
+	i = -1;
+	while (result[++i])
+		f(result[i]);
+	return (result);
 }
