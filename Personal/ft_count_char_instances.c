@@ -6,9 +6,11 @@
 /*   By: amakaren <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 16:14:28 by amakaren          #+#    #+#             */
-/*   Updated: 2018/11/09 16:18:27 by amakaren         ###   ########.fr       */
+/*   Updated: 2018/11/09 16:19:55 by amakaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../Includes/libft.h"
 
 int	ft_count_char_instances(char *s, char c)
 {
