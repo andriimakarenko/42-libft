@@ -18,8 +18,11 @@ int	ft_count_delimiters(char *s, char c)
 	int result;
 
 	result = 0;
-	i = -1;
-	while (str[++i])
+	i = 0;
+	while (str[i++])
+		if (str[i] != c)
+			break;
+	while (str[i++])
 		if (str[i] == c && str[i + 1] && str[i + 1] != c)
 			result++;
 	return (result);
