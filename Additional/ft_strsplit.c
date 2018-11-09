@@ -10,7 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../Includes/libft.h"
+#include <stdlib.h>
+
 char	**ft_strsplit(char const *s, char c)
 {
-	
+	char	**result;
+	int		parts_quantity;
+
+	if (s == NULL || c == '\0')
+		return (NULL);
+	parts_quantity = ft_count_delimiters(s, c) + 1;
+	result = (char**)malloc(sizeof(char*) * (parts_quantity + 1));
 }
