@@ -15,7 +15,7 @@
 
 char	**ft_strsplit(char const *s, char c)
 {
-	char	**result;
+	char	**res;
 	int		parts_quantity;
 	int		i;
 	int		word_index;
@@ -24,7 +24,7 @@ char	**ft_strsplit(char const *s, char c)
 	if (s == NULL || c == '\0')
 		return (NULL);
 	parts_quantity = ft_count_delimiters(s, c) + 1;
-	result = (char**)malloc(sizeof(char*) * (parts_quantity + 1));
+	res = (char**)malloc(sizeof(char*) * (parts_quantity + 1));
 	word_index = -1;
 	i = 0;
 	while (s[i])
@@ -32,9 +32,10 @@ char	**ft_strsplit(char const *s, char c)
 		while (s[i++] == c && (letter_index = 0) == 0)
 			;
 		word_index++;
+		res[word_index] = (char*)malloc(sizeof(char) * ft_get_sbstrlen(s, i));
 		while (s[i++] != c && s[i] != '\0')
-			result[word_index][letter_index++] = s[i];
-		result[word_index][letter_index] = '\0';
+			res[word_index][letter_index++] = s[i];
+		res[word_index][letter_index] = '\0';
 	}
-	return (result);
+	return (res);
 }
