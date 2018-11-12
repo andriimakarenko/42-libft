@@ -34,5 +34,5 @@ int		ft_count_start_ws(char *s);
 int		ft_iswhitespace(char c);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
-int		ft_count_delimiters(char *s, char c);
+int		ft_count_delimiters(const char *str, char c);
 #endif
