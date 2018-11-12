@@ -32,7 +32,7 @@ char	**ft_strsplit(char const *s, char c)
 		while (s[i++] == c && (letter_index = 0) == 0)
 			;
 		word_index++;
-		res[word_index] = (char*)malloc(sizeof(char) * ft_get_sbstrlen(s, i));
+		res[word_index] = (char*)malloc(sizeof(char) * ft_get_sbstrlen(s, i, c));
 		while (s[i++] != c && s[i] != '\0')
 			res[word_index][letter_index++] = s[i];
 		res[word_index][letter_index] = '\0';
