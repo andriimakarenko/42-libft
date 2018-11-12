@@ -16,7 +16,7 @@ int	ft_get_sbstrlen(const char *s, int start, char delimiter)
 {
 	int len;
 
-	len = 0;
+	len = 1;
 	while (s[start] && s[start] != delimiter)
 	{
 		len++;
