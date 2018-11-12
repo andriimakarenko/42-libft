@@ -12,7 +12,7 @@
 
 #include "../Includes/libft.h"
 
-int	ft_count_delimiters(char *s, char c)
+int	ft_count_delimiters(const char *str, char c)
 {
 	int i;
 	int result;
