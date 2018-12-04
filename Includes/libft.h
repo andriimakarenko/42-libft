@@ -36,4 +36,5 @@ char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
 int		ft_count_delimiters(const char *str, char c);
 int		ft_get_sbstrlen(const char *s, int start, char delimiter);
+int		ft_count_substrings(char const *s, char c);
 #endif

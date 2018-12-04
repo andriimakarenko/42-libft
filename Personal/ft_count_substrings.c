@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_count_substrings(char *s, char c)
+int		ft_count_substrings(char const *s, char c)
 {
 	int i;
 	int result;
