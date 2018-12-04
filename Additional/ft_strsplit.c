@@ -33,8 +33,7 @@ char	**ft_strsplit(char const *s, char c)
 			return (NULL);
 		while (s[i] && s[i] != c)
 		{
-			res[word_index][letter_index] = s[i];
-			letter_index++;
+			res[word_index][letter_index++] = s[i];
 			i++;
 		}
 		while (s[i] && s[i] == c)
