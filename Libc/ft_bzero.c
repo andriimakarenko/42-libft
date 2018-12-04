@@ -10,4 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../Includes/libft.h"
 
+void	bzero(void *s, size_t n)
+{
+	int i;
+
+	if (n < 1)
+		return ();
+	i = -1;
+	while (s[++i] && i < n)
+	((char*)s)[i] = 0;
+}
