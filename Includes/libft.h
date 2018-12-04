@@ -40,4 +40,5 @@ int		ft_count_substrings(char const *s, char c);
 char	*ft_strnew(size_t size);
 char	*ft_itoa(int n);
 void	ft_putchar(char c);
+void	ft_putstr(char const *s);
 #endif
