@@ -29,7 +29,7 @@ char	**ft_strsplit(char const *s, char c)
 	word_index = -1;
 	while (++word_index < ft_count_substrings(s, c) && (letter_index = 0) == 0)
 	{
-		if(!(res[word_index] = ft_strnew(ft_get_sbstrlen(s, i, c))))
+		if (!(res[word_index] = ft_strnew(ft_get_sbstrlen(s, i, c))))
 			return (NULL);
 		while (s[i] && s[i] != c)
 		{
