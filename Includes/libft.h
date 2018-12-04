@@ -47,4 +47,5 @@ void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	bzero(void *s, size_t n);
 void	*memcpy(void *dst, const void *src, size_t n);
+void	*memcpy(void *dst, const void *src, int c, size_t n);
 #endif
