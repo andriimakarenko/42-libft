@@ -20,7 +20,7 @@ int		ft_count_substrings(char const *s, char c)
 		return (0);
 	result = 0;
 	while (s[i++])
-		if (s[i] != '\0' && s[i] != c && (s[i + 1] == '\0' || s[i + 1] == c)
+		if (s[i] != '\0' && s[i] != c && (s[i + 1] == '\0' || s[i + 1] == c))
 			result++;
 	return (result);
 }
