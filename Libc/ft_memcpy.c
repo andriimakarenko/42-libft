@@ -10,4 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../Includes/libft.h"
 
+void	*memcpy(void *dst, const void *src, size_t n)
+{
+	int			i;
+	char		*d;
+	const char	*s;
+
+	d = (char*)dst;
+	s = (const char*)src;
+	i = -1;
+	while (++i < n)
+		d[i] = s[i];
+	return (dst);
+}
