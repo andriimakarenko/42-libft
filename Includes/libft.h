@@ -38,4 +38,5 @@ int		ft_count_delimiters(const char *str, char c);
 int		ft_get_sbstrlen(const char *s, int start, char delimiter);
 int		ft_count_substrings(char const *s, char c);
 char	*ft_strnew(size_t size);
+char	*ft_itoa(int n);
 #endif
