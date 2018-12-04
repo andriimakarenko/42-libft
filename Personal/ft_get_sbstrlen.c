@@ -22,5 +22,5 @@ int	ft_get_sbstrlen(const char *s, int start, char delimiter)
 		len++;
 		start++;
 	}
-	return (len);
+	return (len - 1);
 }
