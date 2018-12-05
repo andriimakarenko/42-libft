@@ -16,7 +16,7 @@ CC=gcc
 
 FLAGS=-Wall -Werror -Wextra -c
 
-HEAD=-Ilibft.h
+HEAD=-I.
 
 SRC=ft_isdigit.c ft_putchar_fd.c ft_strdup.c ft_strnew.c ft_isprint.c \
 	ft_putendl.c ft_strequ.c ft_strnstr.c ft_atoi.c ft_iswhitespace.c \
