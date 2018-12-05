@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../Includes/libft.h"
 #include <stdlib.h>
 
 int		ft_get_len(int n, int *sign, int *number)
