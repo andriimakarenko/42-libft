@@ -10,4 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../Includes/libft.h"
+#include <string.h>
 
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+{
+	size_t dst_init_len;
+	size_t total_len;
+	int i;
+	int limit;
+
+	dst_init_len = ft_strlen(dst);
+	total_len = dst_init_len + ft_strlen(src);
+	limit = dstsize - dst_init_len - 1;
+	i = -1;
+	while (src[++i] && i < limit)
+		dst[dst_init_len + i] = src[i];
+	return (total_len);
+}
