@@ -10,4 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../Includes/libft.h"
 
+char	*ft_strrchr(const char *s, int c)
+{
+	char	needle;
+	int		i;
+	int		*reslut;
+
+	reslut = NULL;
+	needle = (char)c;
+	if (needle = '\0')
+		return (s + ft_strlen(s));
+	i = -1;
+	while (s[++i])
+		if (s[i] == needle)
+			reslut = s + i;
+	return (reslut);
+}
