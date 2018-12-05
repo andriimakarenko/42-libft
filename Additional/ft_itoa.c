@@ -12,49 +12,48 @@
 
 #include <stdlib.h>
 
-int		ft_get_rank(int n)
+int		ft_get_len(int n, int *sign, int *number)
 {
-	int	rank;
+	int	len;
 
-	rank = 1;
+	len = 1;
+	if (n < 0)
+	{
+		n *= -1;
+		len++;
+		*sign = 1;
+		*number *= -1;
+	}
 	while (n / 10 > 0)
 	{
-		rank++;
+		len++;
 		n /= 10;
 	}
-	return (rank);
-}
-
-int		ft_power(int number, int power)
-{
-	int	i;
-	int result;
-
-	i = 1;
-	result = number;
-	while (++i <= power)
-		result *= number;
-	return (result);
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	int		rank;
+	int		neg;
+	int		len;
 	char	*result;
-	int		i;
-	char	current_digit;
 
-	rank = ft_get_rank(n);
-	if (!(result = (char*)malloc(sizeof(char) * (rank + 1))))
+	if (n == -2147483648)
+		return ("-2147483648");
+	neg = 0;
+	len = ft_get_len(n, &neg, &n);
+	if (!(result = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	i = 0;
-	if (n < 0)
-		result[i++] = '-';
-	while (ft_get_rank(n) > 0)
+	if (neg == 1)
+		*result = '-';
+	result[len + 1] = '\0';
+	while (len > neg)
 	{
-		current_digit = (n / ft_power(10, ft_get_rank(n)) + 48);
-		result[i++] = current_digit;
-		n -= (current_digit - 48) * ft_get_rank(n);
+		result[len - neg] = (n % 10) + 48;
+		n /= 10;
+		len--;
 	}
+	if (neg == 0)
+	    *result++;
 	return (result);
 }
