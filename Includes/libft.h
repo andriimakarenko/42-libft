@@ -71,4 +71,5 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 void	ft_putnbr(int n);
+void	ft_putnbr_fd(int n, int fd);
 #endif
