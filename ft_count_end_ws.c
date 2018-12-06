@@ -20,8 +20,8 @@ int	ft_count_end_ws(char const *s)
 	len = -1;
 	while (s[++len])
 		;
-	result = 0;
-	while (ft_iswhitespace(s[--len])
-		result++;
-	return (result);
+	res = 0;
+	while (ft_iswhitespace(s[--len]))
+		res++;
+	return (res);
 }
