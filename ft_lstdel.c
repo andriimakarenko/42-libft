@@ -15,5 +15,16 @@
 
 void	ft_lstdel(t_list **alst, void (*del)(void *,size_t))
 {
-	
+	t_list	*targetlist;
+	t_list	*nextlist;
+
+	targetlist = *alst;
+	while(targetlist)
+	{
+		nextlist = targetlist->next;
+		del(targetlist->content, targetlist->content_size);
+		free(targetlist);
+		targetlist = nextlist;
+	}
+	*alst = NULL;
 }
