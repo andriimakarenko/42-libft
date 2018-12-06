@@ -12,10 +12,9 @@
 
 #include "libft.h"
 
-int		ft_intminquit(void)
+void	ft_intminquit(void)
 {
 	ft_putstr("-2147483648");
-	return (0);
 }
 
 void	ft_putnbr(int n)
