@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 	reslut = NULL;
 	needle = (char)c;
 	if (needle = '\0')
-		return (s + ft_strlen(s));
+		return ((char *)s + ft_strlen(s));
 	i = -1;
 	while (s[++i])
 		if (s[i] == needle)
