@@ -28,11 +28,15 @@ char	*ft_strtrim(char const *s)
 		return (NULL);
 	start_ws = ft_count_start_ws(s);
 	end_ws = ft_count_end_ws(s);
-	result = (char*)malloc(sizeof(char) * (SLN(s) - SWS(s) - EWS(s) + 1));
+	result = (char*)malloc(sizeof(char) * (SLN(s) + 1));
 	if (result == NULL)
 		return (NULL);
-	i = start_ws - 1;
-	while (++i + end_ws < (int)ft_strlen(s))
+	i = 0;
+	while (s[i + start_ws])
+	{
 		result[i] = s[i + start_ws];
+		i++;
+	}
+	result[i - end_ws] = '\0';
 	return (result);
 }
