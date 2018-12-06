@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_count_end_ws(char *s)
+int	ft_count_end_ws(char const *s)
 {
 	int len;
 	int res;

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_count_start_ws(char *s)
+int	ft_count_start_ws(char const *s)
 {
 	int i;
 	int	result;

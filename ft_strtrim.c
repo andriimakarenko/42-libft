@@ -32,7 +32,7 @@ char	*ft_strtrim(char const *s)
 	if (result == NULL)
 		return (NULL);
 	i = start_ws - 1;
-	while (++i + end_ws < ft_strlen(s))
+	while (++i + end_ws < (int)ft_strlen(s))
 		result[i] = s[i + start_ws];
 	return (result);
 }
