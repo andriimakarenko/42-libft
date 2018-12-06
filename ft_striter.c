@@ -17,8 +17,8 @@ void	ft_striter(char *s, void (*f)(char *))
 	int i;
 
 	if (f == NULL || s == NULL)
-		return (NULL);
+		return ;
 	i = -1;
 	while (s[++i])
-		f(s[i]);
+		f((s + i));
 }
