@@ -21,14 +21,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (s == NULL || f == NULL)
 		return (NULL);
-	i = -1;
 	len = 0;
-	while (s[++i])
+	while (s[len])
 		len++;
-	result = (char*)malloc(sizeof(char) * (len + 1));
-	result[len + 1] = '\n';
+	if (!(result = (char*)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
 	i = -1;
-	while (result[++i])
-		f(i, result[i]);
+	while (s[++i])
+		result[i] = f(i, s[i]);
 	return (result);
 }
