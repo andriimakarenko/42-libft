@@ -13,20 +13,6 @@
 #include "libft.h"
 #include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char const *s)
-{
-	int i;
-
-	i = -1;
-	while (s[++i])
-		ft_putchar(s[i]);
-}
-
 void	ft_putendl(char const *s)
 {
 	ft_putstr(s);
