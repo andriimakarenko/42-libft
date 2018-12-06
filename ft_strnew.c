@@ -23,7 +23,7 @@ char *ft_strnew(size_t size)
 		return NULL;
 	i = -1;
 	while (++i < (int)size)
-		fresh[i] = '0';
+		fresh[i] = '\0';
 	fresh[size] = '\0';
 	return (fresh);
 }
