@@ -25,7 +25,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 		i++;
 	}
 	if (!(src[i]) &&  i < len)
-		while(i < len + 1)
+		while(i < len)
 			dst[i++] = '\0';
 	return (dst);
 }
