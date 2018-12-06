@@ -18,11 +18,11 @@ char	*ft_strchr(const char *s, int c)
 	int		i;
 
 	needle = (char)c;
-	if (needle = '\0')
-		return (s + ft_strlen(s));
+	if (needle == '\0')
+		return ((char *)s + ft_strlen(s));
 	i = -1;
 	while (s[++i])
 		if (s[i] == needle)
-			return (s + i);
+			return ((char *)s + i);
 	return (NULL);
 }
