@@ -19,8 +19,8 @@ int	ft_count_char_instances(char *s, char c)
 
 	result = 0;
 	i = -1;
-	while (str[++i])
-		if(str[i] == c)
+	while (s[++i])
+		if(s[i] == c)
 			result++;
 	return (result);
 }
