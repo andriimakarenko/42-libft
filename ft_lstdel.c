@@ -9,3 +9,11 @@
 /*   Updated: 2018/12/06 20:18:13 by amakaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
+#include "libft.h"
+
+void	ft_lstdel(t_list **alst, void (*del)(void *,size_t))
+{
+	
+}
