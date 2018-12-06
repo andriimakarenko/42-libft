@@ -17,8 +17,8 @@ void	ft_bzero(void *s, size_t n)
 	size_t i;
 
 	if (n < 1)
-		return ();
+		return ;
 	i = -1;
-	while (s[++i] && i < n)
+	while ((char*)s[++i] && i < n)
 	((char*)s)[i] = 0;
 }
