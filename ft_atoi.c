@@ -22,23 +22,44 @@ int		ft_shift_dec_rank(int base, int rank)
 	return (base);
 }
 
+int		ft_skip_to_number(char const *str, int i, int *sign, int *valid)
+{
+	int		minus_acceptable;
+
+	minus_acceptable = 1;
+	while (str[i] == ' ' || str[i] == '\n' || \
+	str[i] == '\t' || str[i] == '\r' || \
+	str[i] == '\v' || str[i] == '\f')
+		i++;
+	if (str[i] == '+')
+	{
+		i++;
+		minus_acceptable = 0;
+	}
+	if (str[i] == '-' && minus_acceptable)
+	{
+		*sign = -1;
+		i++;
+	}
+	if (str[i] == '-' && !(minus_acceptable))
+		*valid = 0;
+	return (i);
+}
+
 int		ft_atoi(const char *str)
 {
 	int		result;
 	int		i;
 	int		digit_len;
 	int     sign;
+	int		valid;
 
 	i = 0;
 	sign = 1;
 	result = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t')
-		i++;
-	if (str[i] == '+')
-		i++;
-	if (str[i] == '-' && (sign = -1) == -1)
-		i++;
-	if (str[i] < '0' || str[i] > '9')
+	valid = 1;
+	i = ft_skip_to_number(str, i, &sign, &valid);
+	if (str[i] < '0' || str[i] > '9' || !(valid))
 		return (0);
 	digit_len = 1;
 	while (str[i + digit_len] >= '0' && str[i + digit_len] <= '9')
