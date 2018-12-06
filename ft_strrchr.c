@@ -16,15 +16,15 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	needle;
 	int		i;
-	int		*reslut;
+	char	*reslut;
 
 	reslut = NULL;
 	needle = (char)c;
-	if (needle = '\0')
+	if (needle == '\0')
 		return ((char *)s + ft_strlen(s));
 	i = -1;
 	while (s[++i])
 		if (s[i] == needle)
-			reslut = s + i;
+			reslut = (char *)s + i;
 	return (reslut);
 }
