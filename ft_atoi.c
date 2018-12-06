@@ -31,6 +31,7 @@ int		ft_atoi(const char *str)
 
 	i = 0;
 	sign = 1;
+	result = 0;
 	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t')
 		i++;
 	if (str[i] == '+')
