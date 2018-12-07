@@ -55,6 +55,6 @@ char	*ft_itoa(int n)
 		len--;
 	}
 	if (neg == 0)
-	    result++;
+		result++;
 	return (result);
 }

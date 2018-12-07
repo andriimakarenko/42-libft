@@ -24,7 +24,7 @@ char	*ft_strcat(char *s1, const char *s2)
 	i = ft_strlen(s1);
 	j = -1;
 	while (s2[++j])
-		s1[i+j] = s2[j];
-	s1[i+j] = '\0';
+		s1[i + j] = s2[j];
+	s1[i + j] = '\0';
 	return (s1);
 }

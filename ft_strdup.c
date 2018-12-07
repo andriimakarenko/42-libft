@@ -13,25 +13,13 @@
 #include "libft.h"
 #include <stdlib.h>
 
-size_t ft_strlen(const char *s)
-{
-	int i;
-
-	if (s == NULL)
-		return (0);
-	i = -1;
-	while (s[++i])
-		;
-	return ((size_t)i);
-}
-
 char	*ft_strdup(const char *s1)
 {
 	char	*result;
 	int		i;
 
 	if (!(result = (char*)malloc(sizeof(char) * ft_strlen(s1))))
-		return(NULL);
+		return (NULL);
 	i = -1;
 	while (s1[++i])
 		result[i] = s1[i];

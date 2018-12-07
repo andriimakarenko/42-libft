@@ -13,14 +13,14 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char *ft_strnew(size_t size)
+char	*ft_strnew(size_t size)
 {
 	int		i;
 	char	*fresh;
 
 	fresh = (char*)malloc(size);
 	if (fresh == NULL)
-		return NULL;
+		return (NULL);
 	i = -1;
 	while (++i < (int)size)
 		fresh[i] = '\0';

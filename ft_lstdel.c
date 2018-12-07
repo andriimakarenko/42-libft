@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *,size_t))
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
 	t_list	*targetlist;
 	t_list	*nextlist;
@@ -21,7 +21,7 @@ void	ft_lstdel(t_list **alst, void (*del)(void *,size_t))
 	if (!(*alst) || !(del))
 		return ;
 	targetlist = *alst;
-	while(targetlist)
+	while (targetlist)
 	{
 		nextlist = targetlist->next;
 		del(targetlist->content, targetlist->content_size);

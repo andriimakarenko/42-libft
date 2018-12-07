@@ -22,5 +22,5 @@ void	ft_bzero(void *s, size_t n)
 	fix = (char*)s;
 	i = -1;
 	while (fix[++i] && i < n)
-	fix[i] = 0;
+		fix[i] = 0;
 }

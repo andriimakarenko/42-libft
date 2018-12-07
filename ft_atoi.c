@@ -51,7 +51,7 @@ int		ft_atoi(const char *str)
 	int		result;
 	int		i;
 	int		digit_len;
-	int     sign;
+	int		sign;
 	int		valid;
 
 	i = 0;
