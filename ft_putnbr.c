@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-void	ft_intminquit(void)
+static void	ft_intminquit(void)
 {
 	ft_putstr("-2147483648");
 }
 
-void	ft_putnbr(int n)
+void		ft_putnbr(int n)
 {
 	if (n == -2147483648)
 		return (ft_intminquit());

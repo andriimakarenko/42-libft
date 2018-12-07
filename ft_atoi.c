@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		ft_shift_dec_rank(int base, int rank)
+static int	ft_shift_dec_rank(int base, int rank)
 {
 	int i;
 
@@ -22,7 +22,7 @@ int		ft_shift_dec_rank(int base, int rank)
 	return (base);
 }
 
-int		ft_skip_to_number(char const *str, int i, int *sign, int *valid)
+static int	ft_skip_to_number(char const *str, int i, int *sign, int *valid)
 {
 	int		minus_acceptable;
 
@@ -46,7 +46,7 @@ int		ft_skip_to_number(char const *str, int i, int *sign, int *valid)
 	return (i);
 }
 
-int		ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	int		result;
 	int		i;

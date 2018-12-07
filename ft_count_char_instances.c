@@ -20,7 +20,7 @@ int	ft_count_char_instances(char *s, char c)
 	result = 0;
 	i = -1;
 	while (s[++i])
-		if(s[i] == c)
+		if (s[i] == c)
 			result++;
 	return (result);
 }

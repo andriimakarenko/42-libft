@@ -13,13 +13,14 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_get_word(char const *s, int *i, char c)
+static char	*ft_get_word(char const *s, int *i, char c)
 {
 	char	*res;
 	int		letter_index;
 
 	if (!(res = (char*)malloc(sizeof(char) * ft_get_sbstrlen(s, *i, c) + 1)))
 		return (NULL);
+	letter_index = 0;
 	while (s[*i] && s[*i] != c)
 	{
 		res[letter_index] = s[*i];
@@ -30,7 +31,7 @@ char	*ft_get_word(char const *s, int *i, char c)
 	return (res);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	char	**res;
 	int		word_index;

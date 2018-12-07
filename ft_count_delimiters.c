@@ -21,7 +21,7 @@ int	ft_count_delimiters(const char *str, char c)
 	i = 0;
 	while (str[i++])
 		if (str[i] != c)
-			break;
+			break ;
 	while (str[i++])
 		if (str[i] == c && str[i + 1] && str[i + 1] != c)
 			result++;
