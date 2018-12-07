@@ -24,7 +24,7 @@ char	*ft_get_word(char const *s, int *i, char c)
 	{
 		res[letter_index] = s[*i];
 		letter_index++;
-		*i++;
+		*i = *i + 1;
 	}
 	res[letter_index] = '\0';
 	return (res);
