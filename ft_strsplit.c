@@ -13,45 +13,43 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char	**ft_gen_one_entry_2d(char const *s)
+char	*ft_get_word(char const *s, int *i, char c)
 {
-	char	**res;
+	char	*res;
+	int		letter_index;
 
-	if (!(res =	(char**)malloc(sizeof(char*)) + 1))
+	if (!(res = (char*)malloc(sizeof(char) * ft_get_sbstrlen(s, *i, c) + 1)))
 		return (NULL);
-	if (s == NULL)
-		return (res);
-	if (!(res[0] = (char*)malloc(sizeof(char) * ft_strlen(s) + 1)))
-		return (NULL);
-	res[0] = (char*)s;
+	while (s[*i] && s[*i] != c)
+	{
+		res[letter_index] = s[*i];
+		letter_index++;
+		*i++;
+	}
+	res[letter_index] = '\0';
 	return (res);
 }
 
 char	**ft_strsplit(char const *s, char c)
 {
 	char	**res;
-	int		i;
 	int		word_index;
-	int		letter_index;
+	int		i;
 
-	if (ft_stronlychr(s, c))
-		return (ft_gen_one_entry_2d(NULL));
-	if (ft_strnotchr(s, c))
-		return (ft_gen_one_entry_2d(s));
 	if (s == NULL || c == '\0' || !(res = \
 		(char**)malloc(sizeof(char*) * (ft_count_substrings(s, c) + 1))))
 		return (NULL);
-	i = -1;
-	while (s[++i] == c)
-		;
-	word_index = -1;
-	while (++word_index < ft_count_substrings(s, c) && (letter_index = 0) == 0)
+	i = 0;
+	while (s[i] && s[i] == c)
+		i++;
+	if (s[i] == '\0' && (res[0] = NULL) == NULL)
+		return (res);
+	word_index = 0;
+	while (word_index < ft_count_substrings(s, c))
 	{
-		if (!(res[word_index] = ft_strnew(ft_get_sbstrlen(s, i, c))))
-			return (NULL);
-		while (s[i] && s[i] != c)
-			res[word_index][letter_index++] = s[i++];
-		while (s[i] && s[i] == c)
+		res[word_index] = ft_get_word(s, &i, c);
+		word_index++;
+		while (s[i] == c)
 			i++;
 	}
 	return (res);
