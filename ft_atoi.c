@@ -10,9 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#define ULL unsigned long long
 #include "libft.h"
 
-static int	ft_shift_dec_rank(int base, int rank)
+static ULL	ft_shift_dec_rank(ULL base, int rank)
 {
 	int i;
 
@@ -46,13 +47,25 @@ static int	ft_skip_to_number(char const *str, int i, int *sign, int *valid)
 	return (i);
 }
 
+static int	ft_get_final_result(ULL res, int sign)
+{
+	ULL compare;
+
+	compare = (sign == 1? 9223372036854775807uLL : 9223372036854775808uLL);
+	if (sign == 1 && res > compare)
+		return (-1);
+	if (sign == -1 && res > compare)
+		return (0);
+	return ((int)res * sign);
+}
+
 int			ft_atoi(const char *str)
 {
-	int		result;
-	int		i;
-	int		digit_len;
-	int		sign;
-	int		valid;
+	ULL	result;
+	int	i;
+	int	digit_len;
+	int	sign;
+	int	valid;
 
 	i = 0;
 	sign = 1;
@@ -64,10 +77,12 @@ int			ft_atoi(const char *str)
 	digit_len = 1;
 	while (str[i + digit_len] >= '0' && str[i + digit_len] <= '9')
 		digit_len++;
+	if (digit_len > 19)
+		return (sign == 1? -1 : 0);
 	while (digit_len > 0)
 	{
-		result += ft_shift_dec_rank((str[i++] - 48), digit_len);
+		result += ft_shift_dec_rank((ULL)(str[i++] - 48), digit_len);
 		digit_len--;
 	}
-	return (result * sign);
+	return(ft_get_final_result(result, sign));
 }
