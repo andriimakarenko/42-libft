@@ -10,25 +10,44 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#define SLN ft_strlen
+#define SIAPS ft_strisatposstr
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t len)
+static int		ft_strisatposstr(const char *s1, const char *s2, size_t pos)
+{
+	size_t	i;
+
+	i = 0;
+	while (s2[i])
+	{
+		if (s1[pos + i] != s2[i])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+char			*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
 	size_t		i;
-	size_t		j;
+	size_t		s2len;
+	char		*str1;
 
-	if (*s2 == '\0')
-		return ((char *)s1);
-	i = -1;
-	while (s1[++i] && i < len)
+	if (!(s1) || len < 1 || SLN(s1) < SLN(s2))
+		return (NULL);
+	if (*s1 && !(*s2))
+		return ((char*)s1);
+	s2len = SLN(s2);
+	if (len > SLN(s1))
+		return (ft_strstr(s1, s2));
+	str1 = (char*)s1;
+	i = 0;
+	while (str1[i] && (i + s2len <= len))
 	{
-		if (s1[i] == *s2 && (j = 0) == 0)
-		{
-			while (s1[i + j] == s2[j] && s2[j])
-				j++;
-			if (s2[j] == '\0' && i + j < len)
-				return ((char *)s1 + i);
-		}
+		if (str1[i] == *s2 && SIAPS(s1, s2, i))
+			return ((char*)s1 + i);
+		i++;
 	}
 	return (NULL);
 }
