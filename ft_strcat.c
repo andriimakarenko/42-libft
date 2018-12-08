@@ -17,8 +17,6 @@ char	*ft_strcat(char *s1, const char *s2)
 	int i;
 	int j;
 
-	if (!(s1))
-		return (NULL);
 	if (!(s2))
 		return (s1);
 	i = ft_strlen(s1);

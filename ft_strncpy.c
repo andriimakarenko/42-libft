@@ -16,8 +16,6 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	size_t i;
 
-	if (!(src) || !(dst))
-		return (NULL);
 	i = 0;
 	while (src[i] && i < len)
 	{
