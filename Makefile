@@ -30,7 +30,8 @@ SRC=ft_isdigit.c ft_putchar_fd.c ft_strdup.c ft_strnew.c ft_isprint.c \
 	ft_get_sbstrlen.c ft_memdel.c ft_strclr.c ft_strncat.c ft_isalnum.c \
 	ft_memmove.c ft_strcmp.c ft_strncmp.c ft_isalpha.c ft_memset.c \
 	ft_strcpy.c ft_strncpy.c ft_isascii.c ft_putchar.c ft_strdel.c ft_strnequ.c\
-	ft_lstadd.c ft_lstdelone.c ft_lstdel.c ft_lstnew.c ft_lstiter.c ft_lstmap.c
+	ft_lstadd.c ft_lstdelone.c ft_lstdel.c ft_lstnew.c ft_lstiter.c ft_lstmap.c\
+	ft_strnotchr.c ft_stronlychr.c
 
 OBJ=$(SRC:.c=.o)
 
