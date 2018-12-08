@@ -31,12 +31,28 @@ static char	*ft_get_word(char const *s, int *i, char c)
 	return (res);
 }
 
+static char	**ft_gen_one_entry_2d(char const *s)
+{
+	char	**res;
+
+	if (!(res = (char**)malloc(sizeof(char*)) + 1))
+		return (NULL);
+	if (s == NULL)
+		return (res);
+	if (!(res[0] = (char*)malloc(sizeof(char) * ft_strlen(s) + 1)))
+		return (NULL);
+	res[0] = (char*)s;
+	return (res);
+}
+
 char		**ft_strsplit(char const *s, char c)
 {
 	char	**res;
 	int		word_index;
 	int		i;
 
+	if (ft_strnotchr(s, c))
+		return (ft_gen_one_entry_2d(s));
 	if (s == NULL || c == '\0' || !(res = \
 		(char**)malloc(sizeof(char*) * (ft_count_substrings(s, c) + 1))))
 		return (NULL);
