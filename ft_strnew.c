@@ -18,7 +18,7 @@ char	*ft_strnew(size_t size)
 	int		i;
 	char	*fresh;
 
-	fresh = (char*)malloc(size);
+	fresh = (char*)malloc(size + 1);
 	if (fresh == NULL)
 		return (NULL);
 	i = -1;
