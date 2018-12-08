@@ -17,8 +17,6 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	size_t i;
 	size_t j;
 
-	if (!(s2))
-		return (s1);
 	i = ft_strlen(s1);
 	j = -1;
 	while (s2[++j] && j < n)

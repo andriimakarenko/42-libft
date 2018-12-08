@@ -34,7 +34,7 @@ char			*ft_strnstr(const char *s1, const char *s2, size_t len)
 	size_t		s2len;
 	char		*str1;
 
-	if (!(s1) || len < 1 || SLN(s1) < SLN(s2))
+	if (len < 1 || SLN(s1) < SLN(s2))
 		return (NULL);
 	if (*s1 && !(*s2))
 		return ((char*)s1);
