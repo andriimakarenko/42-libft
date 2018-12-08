@@ -11,12 +11,24 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char buffer[len];
+	char	*source;
+	char	*dest;
+	size_t	i;
 
-	ft_memcpy(buffer, src, len);
-	ft_memcpy(dst, buffer, len);
+	source = (char *)src;
+	dest = (char *)dst;
+	if (source < dest)
+		while ((int)(--len) >= 0)
+			*(dest + len) = *(source + len);
+	else
+	{
+		i = -1;
+		while (++i < len)
+			*(dest + i) = *(source + i);
+	}
 	return (dst);
 }
