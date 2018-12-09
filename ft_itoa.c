@@ -40,14 +40,14 @@ char		*ft_itoa(int n)
 	char	*result;
 
 	if (n == -2147483648)
-		return ("-2147483648");
+		return(ft_strdup("-2147483648"));
 	neg = 0;
 	len = ft_get_len(n, &neg, &n);
 	if (!(result = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	if (neg == 1)
 		*result = '-';
-	result[len + 1] = '\0';
+	result[len] = '\0';
 	while (len > neg)
 	{
 		result[len - neg] = (n % 10) + 48;
