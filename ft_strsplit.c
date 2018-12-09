@@ -51,7 +51,7 @@ char		**ft_strsplit(char const *s, char c)
 	int		word_index;
 	int		i;
 
-	if (ft_strnotchr(s, c))
+	if (s != NULL && c != '\0' && ft_strnotchr(s, c))
 		return (ft_gen_one_entry_2d(s));
 	if (s == NULL || c == '\0' || !(res = \
 		(char**)malloc(sizeof(char*) * (ft_count_substrings(s, c) + 1))))
@@ -69,5 +69,6 @@ char		**ft_strsplit(char const *s, char c)
 		while (s[i] == c)
 			i++;
 	}
+	res[word_index] = NULL;
 	return (res);
 }
