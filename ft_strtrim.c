@@ -17,7 +17,17 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strtrim(char const *s)
+static char	*ft_get_empty_line(void)
+{
+	char *res;
+
+	if (!(res = (char*)malloc(sizeof(char) * 1)))
+		return (NULL);
+	res[0] = '\0';
+	return (res);
+}
+
+char		*ft_strtrim(char const *s)
 {
 	char	*result;
 	int		res_len;
@@ -31,7 +41,7 @@ char	*ft_strtrim(char const *s)
 	end_ws = ft_count_end_ws(s);
 	res_len = SLN(s) - SWS(s) - EWS(s);
 	if (res_len < 0)
-		res_len = 0;
+		return (ft_get_empty_line());
 	result = (char*)malloc(sizeof(char) * (res_len + 1));
 	if (result == NULL)
 		return (NULL);
