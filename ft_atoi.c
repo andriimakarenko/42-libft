@@ -51,7 +51,7 @@ static int	ft_get_final_result(ULL res, int sign)
 {
 	ULL compare;
 
-	compare = (sign == 1? 9223372036854775807uLL : 9223372036854775808uLL);
+	compare = (sign == 1 ? 9223372036854775807uLL : 9223372036854775808uLL);
 	if (sign == 1 && res > compare)
 		return (-1);
 	if (sign == -1 && res > compare)
@@ -78,11 +78,11 @@ int			ft_atoi(const char *str)
 	while (str[i + digit_len] >= '0' && str[i + digit_len] <= '9')
 		digit_len++;
 	if (digit_len > 19)
-		return (sign == 1? -1 : 0);
+		return (sign == 1 ? -1 : 0);
 	while (digit_len > 0)
 	{
 		result += ft_shift_dec_rank((ULL)(str[i++] - 48), digit_len);
 		digit_len--;
 	}
-	return(ft_get_final_result(result, sign));
+	return (ft_get_final_result(result, sign));
 }

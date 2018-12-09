@@ -42,6 +42,5 @@ char	*ft_strtrim(char const *s)
 		i++;
 	}
 	result[i - end_ws] = '\0';
-
 	return (result);
 }
