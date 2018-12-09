@@ -42,6 +42,8 @@ static char	**ft_gen_one_entry_2d(char const *s)
 	if (!(res[0] = (char*)malloc(sizeof(char) * ft_strlen(s) + 1)))
 		return (NULL);
 	res[0] = (char*)s;
+	if (*s == '\0')
+		res[0] = NULL;
 	res[1] = NULL;
 	return (res);
 }
