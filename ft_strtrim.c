@@ -20,6 +20,7 @@
 char	*ft_strtrim(char const *s)
 {
 	char	*result;
+	int		res_len;
 	int		start_ws;
 	int		end_ws;
 	int		i;
@@ -28,7 +29,10 @@ char	*ft_strtrim(char const *s)
 		return (NULL);
 	start_ws = ft_count_start_ws(s);
 	end_ws = ft_count_end_ws(s);
-	result = (char*)malloc(sizeof(char) * (SLN(s) + 1));
+	res_len = SLN(s) - SWS(s) - EWS(s);
+	if (res_len < 0)
+		res_len = 0;
+	result = (char*)malloc(sizeof(char) * (res_len + 1));
 	if (result == NULL)
 		return (NULL);
 	i = 0;
@@ -38,5 +42,6 @@ char	*ft_strtrim(char const *s)
 		i++;
 	}
 	result[i - end_ws] = '\0';
+
 	return (result);
 }
