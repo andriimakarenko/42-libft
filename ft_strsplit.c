@@ -33,15 +33,22 @@ static char	*ft_get_word(char const *s, int *i, char c)
 
 static char	**ft_gen_one_entry_2d(char const *s)
 {
+	int		i;
 	char	**res;
 
-	if (!(res = (char**)malloc(sizeof(char*)) + 1))
+	if (!(res = (char**)malloc(sizeof(char*) * 2)))
 		return (NULL);
 	if (s == NULL)
 		return (res);
 	if (!(res[0] = (char*)malloc(sizeof(char) * ft_strlen(s) + 1)))
 		return (NULL);
-	res[0] = (char*)s;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		res[0][i] = s[i];
+		i++;
+	}
+	res[0][i] = '\0';
 	if (*s == '\0')
 		res[0] = NULL;
 	res[1] = NULL;
@@ -54,12 +61,13 @@ char		**ft_strsplit(char const *s, char c)
 	int		word_index;
 	int		i;
 
+	i = 0;
 	if (s != NULL && c != '\0' && ft_strnotchr(s, c))
 		return (ft_gen_one_entry_2d(s));
-	if (s == NULL || c == '\0' || !(res = \
-		(char**)malloc(sizeof(char*) * (ft_count_substrings(s, c) + 1))))
+	if (s == NULL || c == '\0')
 		return (NULL);
-	i = 0;
+	if (!(res = (char**)malloc(sizeof(char*) * (1000))))
+		return (NULL);
 	while (s[i] && s[i] == c)
 		i++;
 	if (s[i] == '\0' && (res[0] = NULL) == NULL)
